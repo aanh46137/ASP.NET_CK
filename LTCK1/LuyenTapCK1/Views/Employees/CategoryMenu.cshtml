@@ -1,0 +1,7 @@
+﻿@model IEnumerable<LuyenTapCK1.Models.Department>
+    @foreach( var item in Model)
+    {
+        var url = "/emps/empbydept/" + item.deptid;
+        <a href="@url">@item.deptname</a>
+        <label>&nbsp;|&nbsp;</label>
+    }

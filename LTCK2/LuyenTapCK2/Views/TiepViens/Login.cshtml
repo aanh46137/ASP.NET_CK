@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm())
+            {
+                <p>
+                    <label>Tiep vien</label>
+                    <input type="text" name="tiepvien" />
+                </p>
+                <p>
+                    <label>Mat khau</label>
+                    <input type="password" name="matkhau" />
+                </p>
+                <p>
+                    <input type="submit" value="Login" />
+                </p>
+            }
+@ViewBag.errMsg 
