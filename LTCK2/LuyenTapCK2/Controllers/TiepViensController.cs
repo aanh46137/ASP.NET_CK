@@ -150,7 +150,7 @@ namespace LuyenTapCK2.Controllers
         {
             try
             {
-                db.TiepVien.Add(emp);
+                db.Entry(emp).State = EntityState.Modified;
                 db.SaveChanges();
                 return Json(new { result = true, JsonRequestBehavior.AllowGet });
             }
