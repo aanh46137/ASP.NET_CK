@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LuyenTapCK3.Models.TiepVien>
+@{
+    ViewBag.Title = "LuongMenu";
+}
+
+<h2>LuongMenu</h2>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    th, td{
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<table>
+    <tr>
+        <th>MaTV</th>
+        <th>Ho ten</th>
+        <th>Luong</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaTV</td>
+            <td>@item.HoTen</td>
+            <td>@item.Luong</td>
+        </tr>
+    }
+</table>
+
+<br />
+<h3>Tong luong cac tiep vien: @ViewBag.TongLuong</h3>
