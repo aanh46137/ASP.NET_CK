@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <center>
+        @Html.ActionLink("Home", "Index", "Home")<label>&nbsp;|&nbsp;</label>
+        @Html.ActionLink("Danh Sach", "Index", "TiepViens")<label>&nbsp;|&nbsp;</label>
+        @Html.ActionLink("Them Tiep Vien", "Create", "TiepViens")<label>&nbsp;|&nbsp;</label>
+        @Html.ActionLink("LuongMenu", "LuongMenu", "TiepViens")<label>&nbsp;|&nbsp;</label>
+
+        <br />
+        @{Html.RenderAction("BoPhanMenu", "TiepViens");}<label>&nbsp;|&nbsp;</label>
+        @if (Session["hoten"] == null)
+        {
+            <a href="/TiepViens/Login">Login</a>
+        }
+        else
+        {
+            <label>Chao mung ban &nbsp;<b>@Session["hoten"]</b>&nbsp;|&nbsp;</label>
+            <a href="/TiepViens/Logout">Logout</a>
+        }
+
+
+    </center>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
